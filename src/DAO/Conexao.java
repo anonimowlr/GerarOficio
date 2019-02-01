@@ -38,7 +38,7 @@ public class Conexao {
             this.usuario = "root";
             this.senha = "root";
         }else{
-            this.host = "10.105.87.250";
+            this.host = "10.105.87.2500";
             this.usuario = "basso";  
             this.senha = "2579368410";
         }
