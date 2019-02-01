@@ -294,13 +294,13 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         cmbRespostas.addItem("TRABALHISTA – IR SOLICITAÇÃO DE QUANTIDADE DE MESES");
         cmbRespostas.addItem("TRABALHISTA - JÁ PETICIONADO");
         cmbRespostas.addItem("TRABALHISTA - OFICIAR BENEFICIÁRIO");
-        cmbRespostas.addItem("TRABALHISTA – OFICIO DISPONIVEL PARA RETIRADA NO PAB");
+        cmbRespostas.addItem("TRABALHISTA – OFICIO DIPRONIVEL PARA RETIRADA NO PAB");
         cmbRespostas.addItem("TRABALHISTA - ORIGEM DO AVISO DE CRÉDITO");
         cmbRespostas.addItem("TRABALHISTA - RECOMPOSIÇÃO DA CONTA");
         cmbRespostas.addItem("TRABALHISTA - RECOMPOSIÇÃO");
         cmbRespostas.addItem("TRABALHISTA - RETIFICAÇÃO EFETUADA");
         cmbRespostas.addItem("TRABALHISTA - RODAPÉ - OFÍCIO PADRÃO");
-        cmbRespostas.addItem("TRABALHISTA - SALDO DISPONÍVEL");
+        cmbRespostas.addItem("TRABALHISTA - SALDO DIPRONÍVEL");
         cmbRespostas.addItem("TRABALHISTA - SALDO INSUFICIENTE");
         cmbRespostas.addItem("TRABALHISTA - SALDO ZERADO");
         cmbRespostas.addItem("TRABALHISTA – SALDO ZERADO DE PARCELA SOLICITADA");
@@ -339,7 +339,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         
         //EXCLUIDO 16-05-2017 GERENTE LEANDRO // REATIVADO GERENTE LEANDRO 29-05-2017
         cmbRespostas.addItem("DJO - Não Cumprido - Emitir MLJ");
-        //cmbRespostas.addItem("DJO - Não Cumprido - FUNPESP");
+        //cmbRespostas.addItem("DJO - Não Cumprido - FUNPEPR");
         cmbRespostas.addItem("DJO - Não Cumprido - Saldo Insuficiente");
         //cmbRespostas.addItem("DJO - Não Cumprido - Tributário");
         cmbRespostas.addItem("DJO - Não Cumprido - Tributos");
@@ -1701,7 +1701,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         txtReu.setText(rs.getString("REU"));
                         txtEnvolvido.setText(rs.getString("ENVOLVIDO"));
                         txtAbc.setText(rs.getString("ABC"));
-                        txtCorpo.setText(rs.getString("RESPOSTA"));
+                        txtCorpo.setText(rs.getString("REPROSTA"));
                         txtDestinatário.setText(rs.getString("TRATAMENTO"));
                         txtEndereco.setText(rs.getString("ENDERECO"));
                         txtLinhas.setText(rs.getString("LINHAS"));
@@ -2605,7 +2605,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Meritíssimo(a) Juiz(a), \n"
                             + "\n"
                             + "\n"
-                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que quaisquer solicitações, dúvidas e informações pertinentes a seguros deverão ser enviadas à Avenida das Nações Unidas, 14261, 29º andar, Ala A - Vila Gertrudes - CEP 04.794-000 – São Paulo / SP, pois a COMPANHIA DE SEGUROS ALIANCA DO BRASIL, CNPJ 28.196.889/0001-43, possui personalidade jurídica própria, distinta do Banco do Brasil.\n"
+                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que quaisquer solicitações, dúvidas e informações pertinentes a seguros deverão ser enviadas à Avenida das Nações Unidas, 14261, 29º andar, Ala A - Vila Gertrudes - CEP 04.794-000 – São Paulo / PR, pois a COMPANHIA DE SEGUROS ALIANCA DO BRASIL, CNPJ 28.196.889/0001-43, possui personalidade jurídica própria, distinta do Banco do Brasil.\n"
                             + "\n"
                             + "Colocamo-nos à disposição para eventuais esclarecimentos e informações porventura necessários.\n"
                             + "\n"
@@ -2703,7 +2703,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Meritíssimo(a) Juiz(a), \n"
                             + "\n"
                             + "\n"
-                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que a referida transação foi efetuada em Terminal do Banco 24 Horas, que é administrado pela TECBAN TECNOLOGIA BANCARIA, motivo pelo qual sugerimos que o presente ofício seja enviado à Avenida Andrômeda, 2000, Ed. Jacarandá – Alphaville – CEP 06473-900 – Barueri/SP.\n"
+                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que a referida transação foi efetuada em Terminal do Banco 24 Horas, que é administrado pela TECBAN TECNOLOGIA BANCARIA, motivo pelo qual sugerimos que o presente ofício seja enviado à Avenida Andrômeda, 2000, Ed. Jacarandá – Alphaville – CEP 06473-900 – Barueri/PR.\n"
                             + "\n"
                             + "Colocamo-nos à disposição para eventuais esclarecimentos e informações porventura necessários.\n"
                             + "\n"
@@ -2754,7 +2754,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Meritíssimo(a) Juiz(a), \n"
                             + "\n"
                             + "\n"
-                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, comunicamos que as informações referentes a planos de previdência aberta da Brasilprev são fornecidas pela BRASILPREV SEGUROS E PREVIDÊNCIAS S.A, situada à Rua Alexandre Dumas, 1671 – Chácara Santo Antônio - CEP 04717-004 - SÃO PAULO/SP, motivo pelo qual sugerimos oficiá-la.\n"
+                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, comunicamos que as informações referentes a planos de previdência aberta da Brasilprev são fornecidas pela BRASILPREV SEGUROS E PREVIDÊNCIAS S.A, situada à Rua Alexandre Dumas, 1671 – Chácara Santo Antônio - CEP 04717-004 - CURITIBA/PR, motivo pelo qual sugerimos oficiá-la.\n"
                             + "\n"
                             + "Declaramos que as informações constantes deste documento e de seus eventuais anexos, requisitados ao Banco do Brasil S.A., estão protegidos pela Lei Complementar Nº 105, de 10 de janeiro de 2001, que dispõe sobre o sigilo das operações e serviços prestados pelas instituições financeiras, cuja integridade e preservação ora transferimos para essa autoridade.\n"
                             + "\n"
@@ -2901,7 +2901,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Meritíssimo(a) Juiz(a), \n"
                             + "\n"
                             + "\n"
-                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que o mesmo deverá ser enviado à Rua Manuel da Nóbrega, 1280, 9º andar – Paraiso – CEP 04001-004 – São Paulo/SP, pois a COMPANHIA DE SEGUROS ALIANCA DO BRASIL, CNPJ 28.196.889/0001-43, possui personalidade jurídica própria, distinta do Banco do Brasil.\n"
+                            + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos que o mesmo deverá ser enviado à Rua Manuel da Nóbrega, 1280, 9º andar – Paraiso – CEP 04001-004 – São Paulo/PR, pois a COMPANHIA DE SEGUROS ALIANCA DO BRASIL, CNPJ 28.196.889/0001-43, possui personalidade jurídica própria, distinta do Banco do Brasil.\n"
                             + "\n"
                             + "Colocamo-nos à disposição para eventuais esclarecimentos e informações porventura necessários.\n"
                             + "\n"
@@ -4085,7 +4085,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que a conta judicial foi aberta sob nº XXXXXXXXXXXX, na agência 5905-6 Poder Judiciário/SP, nos autos do processo em epígrafe.\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que a conta judicial foi aberta sob nº XXXXXXXXXXXX, na agência 5905-6 Poder Judiciário/PR, nos autos do processo em epígrafe.\n"
                             + "\n"
                             + "Colocamo-nos à disposição de Vossa Excelência para os eventuais esclarecimentos ou informações porventura necessários.\n"
                             + "\n"
@@ -4123,7 +4123,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, solicitamos, por especial obséquio, que seja determinado ao representante legal do menor, que compareça à nossa congênere de prefixo 4393-1 – Tribunal Regional do Trabalho – São Paulo/SP, sita à Av. Marquês de São Vicente, 235 – Térreo – Barra Funda – São Paulo/SP, CEP 01139-001, com todos os documentos necessários, para que possamos efetuar a abertura da conta poupança.\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, solicitamos, por especial obséquio, que seja determinado ao representante legal do menor, que compareça à nossa congênere de prefixo 4393-1 – Tribunal Regional do Trabalho – São Paulo/PR, sita à Av. Marquês de São Vicente, 235 – Térreo – Barra Funda – São Paulo/PR, CEP 01139-001, com todos os documentos necessários, para que possamos efetuar a abertura da conta poupança.\n"
                             + "\n"
                             + "Colocamo-nos à disposição de Vossa Excelência para os eventuais esclarecimentos ou informações porventura necessários.\n"
                             + "\n"
@@ -4200,7 +4200,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Informamos que foi remetido em 29/01/2016 o ofício nº 0028/2016 de 28/01/2016, protocolado em 29/01/2016, para a nossa congênere de prefixo 1981-X – CENOP Serviços São Paulo/SP, sita à Rua Boa vista, 254 – 14º andar – Centro – São Paulo/SP, CEP 01014-907, para atender à determinação ali contida, oficiando diretamente a esse Juízo.\n"
+                            + "Informamos que foi remetido em 29/01/2016 o ofício nº 0028/2016 de 28/01/2016, protocolado em 29/01/2016, para a nossa congênere de prefixo 1981-X – CENOP Serviços São Paulo/PR, sita à Rua Boa vista, 254 – 14º andar – Centro – São Paulo/PR, CEP 01014-907, para atender à determinação ali contida, oficiando diretamente a esse Juízo.\n"
                             + "\n"
                             + "Colocamo-nos à disposição de Vossa Excelência para os eventuais esclarecimentos ou informações porventura necessários.\n"
                             + "\n"
@@ -4352,7 +4352,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que desconsideramos o contido no ofício SPREC nº XXX/XXXX de XX/XX/XXXX, e que aguardamos novas determinações desse Juízo.\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que desconsideramos o contido no ofício PRREC nº XXX/XXXX de XX/XX/XXXX, e que aguardamos novas determinações desse Juízo.\n"
                             + "\n"
                             + "Colocamo-nos à disposição de Vossa Excelência para os eventuais esclarecimentos ou informações porventura necessários.\n"
                             + "\n"
@@ -4406,7 +4406,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "\n"
                             + "3.	Esclarecemos que, uma vez efetuados os levantamentos a título de recolhimentos ao INSS, não podemos cancelá-los, visto que não temos alçada para realizar tal operação.\n"
                             + "\n"
-                            + "4.	Informamos ainda, que se encontra a disposição, na agência 5905-6 Poder Judiciário (SP), o saldo remanescente no valor de R$ X.XXX,XX (R$ XX.XXX,XX – valor original), depositado nos autos do processo supra, com direito a rendimentos desde XX/XX/XXXX, na conta de depósito judicial nº XXXXXXXXXXXXX.\n"
+                            + "4.	Informamos ainda, que se encontra a disposição, na agência 5905-6 Poder Judiciário (PR), o saldo remanescente no valor de R$ X.XXX,XX (R$ XX.XXX,XX – valor original), depositado nos autos do processo supra, com direito a rendimentos desde XX/XX/XXXX, na conta de depósito judicial nº XXXXXXXXXXXXX.\n"
                             + "\n"
                             + "5.	Diante do exposto e visto que o saldo não comporta a transferência solicitada no ofício supra, a título de recolhimento de IR, no valor de R$ XX.XXX,XX, solicitamos por especial obséquio, o auxílio desse MM. Juízo, no sentido de oficiar o INSS, para que proceda à devolução do valor creditado em duplicidade, quer seja, R$ X.XXXX,XX, para que se possa restituir a conta judicial nº XXXXXXXXX à disposição dos autos do processo em epígrafe.\n"
                             + "\n"
@@ -4499,7 +4499,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "\n"
                             + "Em atendimento à requisição de Vossa Excelência, por meio do ofício expedido nos autos do processo em epígrafe, informamos a V.Exa. que não cumprimos com o determinado, em razão de que, o ofício  não está com a assinatura do(a) MM. Sr.(a) Juíz(a). \n"
                             + "\n"
-                            + "Esclarecemos ainda que a consulta a Saldo e extratos esta disponivel aos Magistrados e Serventuários da Justiça autorizados, através do Portal BB ou Via Auto atendimento setor público (AASP), com o devido cadastramento e assinatura do termo de Adesão junto à agência centralizadora da Comarca, 3832 Setor Publico Salvador.\n"
+                            + "Esclarecemos ainda que a consulta a Saldo e extratos esta disponivel aos Magistrados e Serventuários da Justiça autorizados, através do Portal BB ou Via Auto atendimento setor público (AAPR), com o devido cadastramento e assinatura do termo de Adesão junto à agência centralizadora da Comarca, 3832 Setor Publico Salvador.\n"
                             + "\n"
                             + "Colocamo-nos à disposição para eventuais esclarecimentos, aproveitando o ensejo para enviar protestos de elevada estima e consideração.\n"
                             + "\n"
@@ -4584,7 +4584,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "\n"
                             + "Respeitosamente,");
                     break;
-                case "TRABALHISTA – OFICIO DISPONIVEL PARA RETIRADA NO PAB":
+                case "TRABALHISTA – OFICIO DIPRONIVEL PARA RETIRADA NO PAB":
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
@@ -4599,7 +4599,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício nº XXXX/XXXX de XX/XX/XXXX, protocolado em XX/XX/XXXX, esclarecemos que o aviso de crédito anexo ao ofício supra de fls. XXX, refere-se à transferência oriunda do processo nº XXXXXXXXXXXXX da XXª Vara do Trabalho de São Paulo/SP, colocando o valor informado à disposição desse Juízo, nos autos do processo em epígrafe.\n"
+                            + "Em atenção ao ofício nº XXXX/XXXX de XX/XX/XXXX, protocolado em XX/XX/XXXX, esclarecemos que o aviso de crédito anexo ao ofício supra de fls. XXX, refere-se à transferência oriunda do processo nº XXXXXXXXXXXXX da XXª Vara do Trabalho de São Paulo/PR, colocando o valor informado à disposição desse Juízo, nos autos do processo em epígrafe.\n"
                             + "\n"
                             + "Colocamo-nos à disposição de Vossa Excelência para os eventuais esclarecimentos ou informações porventura necessários.\n"
                             + "\n"
@@ -4610,7 +4610,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que procedemos à recomposição da conta judicial pertencente a esse Juízo, e que o valor abaixo discriminado encontra-se à disposição, na agência 5905-6 Poder Judiciário/SP, nos autos do processo em epígrafe:\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que procedemos à recomposição da conta judicial pertencente a esse Juízo, e que o valor abaixo discriminado encontra-se à disposição, na agência 5905-6 Poder Judiciário/PR, nos autos do processo em epígrafe:\n"
                             + "\n"
                             + "-	Conta Judicial	: XXXXXXXXXXXXX\n"
                             + "-	Valor                      : R$ XXXXXX \n"
@@ -4675,11 +4675,11 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "Respeitosamente,");
                     break;     
                     
-                case "TRABALHISTA - SALDO DISPONÍVEL":
+                case "TRABALHISTA - SALDO DIPRONÍVEL":
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado  em XX/XX/XXXX, informamos que o valor abaixo discriminado encontra-se à disposição desse Juízo, na agência 5905-6 Poder Judiciário/SP, nos autos do processo em epígrafe, conforme segue:\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado  em XX/XX/XXXX, informamos que o valor abaixo discriminado encontra-se à disposição desse Juízo, na agência 5905-6 Poder Judiciário/PR, nos autos do processo em epígrafe, conforme segue:\n"
                             + "\n"
                             + "–	Conta Judicial		 : xxxxxxxxxxxxx\n"
                             + "–	Valor			: xxxxxxxxxxxxx\n"
@@ -4693,7 +4693,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                 case "TRABALHISTA - SALDO INSUFICIENTE":
                     txtCorpo.setText("Excelentíssimo(a) Senhor(a) Juiz(a),\n"
                             + "\n"
-                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que se encontra à disposição, na agência 5905-6 Poder Judiciário (SP), o saldo remanescente no valor de R$ XX.XXX,XX, (valor original R$ XX.XXX,XX) depositado nos autos do processo supra, com direito a rendimentos desde XX/XX/XXXX, na conta de depósito judicial nº XXXXXXXXXX.\n"
+                            + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que se encontra à disposição, na agência 5905-6 Poder Judiciário (PR), o saldo remanescente no valor de R$ XX.XXX,XX, (valor original R$ XX.XXX,XX) depositado nos autos do processo supra, com direito a rendimentos desde XX/XX/XXXX, na conta de depósito judicial nº XXXXXXXXXX.\n"
                             + "\n"
                             + "Diante do exposto e visto que o saldo não comporta a transferência solicitada no ofício supra, aguardamos novas determinações desse Juízo.\n"
                             + "\n"
@@ -4786,7 +4786,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "\n"
                             + "Em atenção ao ofício supra de XX/XX/XXXX, protocolado em XX/XX/XXXX, informamos que a TED, enviada ao Banco XXXXXXXX em XX/XX/XXXX, no valor de R$ XXXXXX (R$ XXXXX + correções), foi devolvida pela alínea XX – XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.\n"
                             + "\n"
-                            + "Informamos ainda, que o valor foi reaplicado e que se encontra à disposição desse Juízo, na agência 5905-6 Poder Judiciário (SP), nos autos do processo em epígrafe:\n"
+                            + "Informamos ainda, que o valor foi reaplicado e que se encontra à disposição desse Juízo, na agência 5905-6 Poder Judiciário (PR), nos autos do processo em epígrafe:\n"
                             + "\n"
                             + "–	Conta Judicial		: XXXXXXXXX\n"
                             + "–	Valor			: R$XXXXXXX\n"
@@ -4892,7 +4892,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             + "\n"
                             + "Pelo presente e em atenção ao ofício supracitado, vinculado aos autos em epígrafe, solicitamos que nos informe qual o tipo de conta deverá ser aberta.\n"
                             + "\n"
-                            + "Para a abertura de uma conta judicial – Justiça Estadual, nesta Instituição, se faz necessário acessar o site do Portal de Custas do TJ - SP, https://portaldecustas.tjsp.jus.br/portaltjsp/login.jsp .\n"
+                            + "Para a abertura de uma conta judicial – Justiça Estadual, nesta Instituição, se faz necessário acessar o site do Portal de Custas do TJ - PR, https://portaldecustas.tjsp.jus.br/portaltjsp/login.jsp .\n"
                             + "\n"
                             + "Após o cadastramento dos dados necessários, será gerado o número do ID (Identificador de Depósito). O nº da conta judicial será gerado pelo sistema, a partir da efetivação da transferência.\n"
                             + "\n"
@@ -4983,7 +4983,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     txtCorpo.setText("Meritíssimo(a) Juiz(a),\n"
                             + "\n"
                             + "\n"
-                            + "Pelo presente e em atenção ao ofício supracitado, informamos que o valor abaixo discriminado encontra-se à disposição desse Juízo, na agência 5905-6 Poder Judiciário/SP, nos autos do processo em epígrafe, conforme segue:\n"
+                            + "Pelo presente e em atenção ao ofício supracitado, informamos que o valor abaixo discriminado encontra-se à disposição desse Juízo, na agência 5905-6 Poder Judiciário/PR, nos autos do processo em epígrafe, conforme segue:\n"
                             + "\n"
                             + "–	Conta Judicial            : xxxxxxxxxxxxx\n"
                             + "–	Valor                          : xxxxxxxxxxxxx\n"
@@ -5441,7 +5441,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         txtReu.setText(rs.getString("REU"));
                         txtEnvolvido.setText(rs.getString("ENVOLVIDO"));
                         txtAbc.setText(rs.getString("ABC"));
-                        txtCorpo.setText(rs.getString("RESPOSTA"));
+                        txtCorpo.setText(rs.getString("REPROSTA"));
                         txtDestinatário.setText(rs.getString("TRATAMENTO"));
                         txtEndereco.setText(rs.getString("ENDERECO"));
                         txtLinhas.setText(rs.getString("LINHAS"));
@@ -5658,7 +5658,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         txtReu.setText(rs.getString("REU"));
                         txtEnvolvido.setText(rs.getString("ENVOLVIDO"));
                         txtAbc.setText(rs.getString("ABC"));
-                        txtCorpo.setText(rs.getString("RESPOSTA"));
+                        txtCorpo.setText(rs.getString("REPROSTA"));
                         txtDestinatário.setText(rs.getString("TRATAMENTO"));
                         txtEndereco.setText(rs.getString("ENDERECO"));
                         txtLinhas.setText(rs.getString("LINHAS"));
@@ -5888,7 +5888,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         txtReu.setText(rs.getString("REU"));
                         txtEnvolvido.setText(rs.getString("ENVOLVIDO"));
                         txtAbc.setText(rs.getString("ABC"));
-                        txtCorpo.setText(rs.getString("RESPOSTA"));
+                        txtCorpo.setText(rs.getString("REPROSTA"));
                         txtDestinatário.setText(rs.getString("TRATAMENTO"));
                         txtEndereco.setText(rs.getString("ENDERECO"));
                         txtLinhas.setText(rs.getString("LINHAS"));
@@ -6132,7 +6132,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         //com.mysql.jdbc.Connection cn = (com.mysql.jdbc.Connection) new Conexao().conectar();
                         String sqlUp = "UPDATE " + tabelaGerador_oficio + " "
                                 + "SET OFICIO_CENOP=?,PROCESSO=?,INQUERITO=?,OFICIO=?,AUTOR=?,"
-                                + "REU=?,ENVOLVIDO=?,ABC=?,RESPOSTA=?,TRATAMENTO=?,ENDERECO=?,CMBAUTOR=?,CMBREU=?,"
+                                + "REU=?,ENVOLVIDO=?,ABC=?,REPROSTA=?,TRATAMENTO=?,ENDERECO=?,CMBAUTOR=?,CMBREU=?,"
                                 + "CMBENVOLVIDO=?,CMBCONTEUDO=?,LINHAS=?,SIGILOSO=?,CORREIO=?,DATA=now(),EMAIL=?,GERENTE=?,ENDERECO_RET=? "
                                 + "WHERE AOF=?";
                         
@@ -6167,7 +6167,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
 
                     } else {
                          String sql = "INSERT INTO " + tabelaGerador_oficio + " (OFICIO_CENOP,AOF,PROCESSO,INQUERITO,OFICIO,AUTOR,"
-                                + "REU,ENVOLVIDO,ABC,RESPOSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?)";
+                                + "REU,ENVOLVIDO,ABC,REPROSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?)";
 
                         PreparedStatement comando = cn.prepareStatement(sql);
                         comando.setString(1, oficioCenop);
@@ -6226,7 +6226,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         //   com.mysql.jdbc.Connection cn = (com.mysql.jdbc.Connection) new Conexao().conectar();
                         String sqlUp = "UPDATE " + tabelaGerador_oficio + " "
                                 + "SET AOF=?,PROCESSO=?,INQUERITO=?,OFICIO=?,AUTOR=?,"
-                                + "REU=?,ENVOLVIDO=?,ABC=?,RESPOSTA=?,TRATAMENTO=?,ENDERECO=?,CMBAUTOR=?,CMBREU=?,CMBENVOLVIDO=?,CMBCONTEUDO=?,LINHAS=?,SIGILOSO=?,CORREIO=? ,DATA=now(),EMAIL=?, GERENTE=?, ENDERECO_RET=? "
+                                + "REU=?,ENVOLVIDO=?,ABC=?,REPROSTA=?,TRATAMENTO=?,ENDERECO=?,CMBAUTOR=?,CMBREU=?,CMBENVOLVIDO=?,CMBCONTEUDO=?,LINHAS=?,SIGILOSO=?,CORREIO=? ,DATA=now(),EMAIL=?, GERENTE=?, ENDERECO_RET=? "
                                 + "WHERE OFICIO_CENOP=? ";
                         
                         PreparedStatement comando = cn.prepareStatement(sqlUp);
@@ -6262,7 +6262,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
 
                     } else {
                         String sql = "INSERT INTO " + tabelaGerador_oficio + "(OFICIO_CENOP,AOF,PROCESSO,INQUERITO,OFICIO,AUTOR,"
-                                + "REU,ENVOLVIDO,ABC,RESPOSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?)";
+                                + "REU,ENVOLVIDO,ABC,REPROSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?)";
 
                         PreparedStatement comando = cn.prepareStatement(sql);
                         comando.setString(1, oficioCenop);
