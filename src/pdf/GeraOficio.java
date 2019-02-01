@@ -229,7 +229,7 @@ public class GeraOficio {
             Paragraph p8 = new Paragraph("BANCO DO BRASIL S.A.", Arial14N);
             p8.setAlignment(Element.ALIGN_CENTER);
             documento.add(p8);
-            Paragraph p9 = new Paragraph("CENOP SERVIÇOS CURITIBA/PR", Arial12);
+            Paragraph p9 = new Paragraph("CENOP SERVIÇOS SÃO PAULO/SP", Arial12);
             p9.setAlignment(Element.ALIGN_CENTER);
             documento.add(p9);
             

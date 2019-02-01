@@ -39,8 +39,8 @@ public class Conexao {
             this.senha = "root";
         }else{
             this.host = "10.105.87.250";
-            this.usuario = "";  
-            this.senha = "";
+            this.usuario = "basso";  
+            this.senha = "2579368410";
         }
 
    this.url = "jdbc:mysql://" + host + ":3306/" + banco; //URL de conexão
