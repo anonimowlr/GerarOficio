@@ -91,9 +91,9 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         Integer largura;
         Integer altura;
         largura = d.width;
-        largura = (largura / 2) - (740 / 2);
+        largura = (largura / 2) - (1366 / 2);
         altura = d.height;
-        altura = (altura / 2) - (850 / 2);
+        altura = (altura / 2) - (768 / 2);
    
         initComponents();
         
@@ -454,7 +454,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                 mesExtenso = "Dezembro";
                 break;
         }
-        txtData.setText("São Paulo, " + hoje.getDayOfMonth() + " de " + mesExtenso + " de " + hoje.getYear() + ".");
+        txtData.setText("Curitiba, " + hoje.getDayOfMonth() + " de " + mesExtenso + " de " + hoje.getYear() + ".");
         
         //this.setIconImage(Toolkit.getDefaultToolkit().getImage("Logo.png"));
         //this.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\Imagens\\LogoRetangular.png"));
@@ -642,17 +642,17 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel15.setText("_______________________________________________________________________________________");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(10, 780, 710, 15);
+        jLabel15.setBounds(10, 690, 710, 15);
 
         jLabel16.setFont(new java.awt.Font("Verdana", 1, 9)); // NOI18N
         jLabel16.setText("CENOP- Serviços - Curitiba/PR");
         getContentPane().add(jLabel16);
-        jLabel16.setBounds(10, 800, 270, 17);
+        jLabel16.setBounds(10, 700, 270, 17);
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel18.setText("End. retorno:");
         getContentPane().add(jLabel18);
-        jLabel18.setBounds(390, 730, 85, 17);
+        jLabel18.setBounds(390, 630, 85, 17);
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel5.setText("Iniciais:");
@@ -681,14 +681,14 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnOficio);
-        btnOficio.setBounds(620, 760, 90, 30);
+        btnOficio.setBounds(620, 660, 90, 30);
 
         txtCorpo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtCorpo.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jScrollPane3.setViewportView(txtCorpo);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(10, 300, 700, 330);
+        jScrollPane3.setBounds(10, 300, 700, 230);
 
         btnLimpar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 51, 0));
@@ -699,14 +699,14 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnLimpar);
-        btnLimpar.setBounds(420, 760, 90, 30);
+        btnLimpar.setBounds(420, 660, 90, 30);
 
         txtEndereco.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtEndereco.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jScrollPane4.setViewportView(txtEndereco);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(10, 670, 360, 120);
+        jScrollPane4.setBounds(10, 570, 360, 120);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -767,7 +767,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtDestinatário);
-        txtDestinatário.setBounds(10, 720, 220, 20);
+        txtDestinatário.setBounds(10, 620, 220, 20);
 
         txtInquerito.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         txtInquerito.setToolTipText("");
@@ -904,7 +904,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(330, 810, 90, 20);
+        jLabel1.setBounds(330, 710, 90, 20);
 
         btnSalvar.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         btnSalvar.setForeground(new java.awt.Color(0, 0, 204));
@@ -916,7 +916,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalvar);
-        btnSalvar.setBounds(520, 760, 90, 30);
+        btnSalvar.setBounds(520, 660, 90, 30);
 
         cmbRespostas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmbRespostas.setToolTipText("");
@@ -975,17 +975,17 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(90, 640, 140, 23);
+        jButton1.setBounds(90, 540, 140, 23);
 
         jLabel17.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 102, 255));
         jLabel17.setText("Endereço:");
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(10, 640, 80, 20);
+        jLabel17.setBounds(10, 540, 80, 20);
 
         txtEmail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(txtEmail);
-        txtEmail.setBounds(480, 640, 230, 30);
+        txtEmail.setBounds(480, 540, 230, 30);
 
         buttonGroup1.add(jRadioButtonEmail);
         jRadioButtonEmail.setFont(new java.awt.Font("Verdana", 3, 14)); // NOI18N
@@ -997,7 +997,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButtonEmail);
-        jRadioButtonEmail.setBounds(400, 640, 75, 27);
+        jRadioButtonEmail.setBounds(400, 540, 75, 27);
 
         buttonGroup1.add(jRadioButtonNaoEmail);
         jRadioButtonNaoEmail.setFont(new java.awt.Font("Verdana", 3, 11)); // NOI18N
@@ -1009,7 +1009,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButtonNaoEmail);
-        jRadioButtonNaoEmail.setBounds(480, 670, 120, 23);
+        jRadioButtonNaoEmail.setBounds(480, 570, 120, 23);
 
         jRadioButton3via.setFont(new java.awt.Font("Verdana", 3, 11)); // NOI18N
         jRadioButton3via.setForeground(new java.awt.Color(0, 0, 255));
@@ -1020,7 +1020,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jRadioButton3via);
-        jRadioButton3via.setBounds(640, 730, 70, 23);
+        jRadioButton3via.setBounds(640, 630, 70, 23);
 
         jLabel20.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel20.setText("Prazo:");
@@ -1033,12 +1033,12 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmbGerente);
-        cmbGerente.setBounds(480, 700, 230, 20);
+        cmbGerente.setBounds(480, 600, 230, 20);
 
         jLabel21.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel21.setText("Assinatura:");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(400, 700, 80, 17);
+        jLabel21.setBounds(400, 600, 80, 17);
 
         cmbEnderecoRetorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1046,7 +1046,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cmbEnderecoRetorno);
-        cmbEnderecoRetorno.setBounds(480, 730, 150, 20);
+        cmbEnderecoRetorno.setBounds(480, 630, 150, 20);
 
         jCheckBoxComAnexo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jCheckBoxComAnexo.setText("Com Anexo");
@@ -1056,7 +1056,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jCheckBoxComAnexo);
-        jCheckBoxComAnexo.setBounds(610, 670, 100, 23);
+        jCheckBoxComAnexo.setBounds(610, 570, 100, 23);
 
         jFormattedTextFieldPrazo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jFormattedTextFieldPrazo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

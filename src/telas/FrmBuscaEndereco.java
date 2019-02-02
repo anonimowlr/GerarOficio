@@ -5,8 +5,10 @@
  */
 package telas;
 
+import DAO.BairroDAO;
 import DAO.Conexao;
 import com.mysql.jdbc.Connection;
+import entidades.Bairro;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
@@ -15,6 +17,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -22,6 +26,8 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.MaskFormatter;
 import javax.swing.text.PlainDocument;
+import static jdk.nashorn.internal.objects.NativeString.trim;
+import util.Utils;
 
 /**
  *
@@ -458,7 +464,6 @@ public final class FrmBuscaEndereco extends javax.swing.JFrame {
         txtDjo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtDjo.setForeground(new java.awt.Color(255, 255, 255));
         txtDjo.setText("  0");
-        txtDjo.setBorder(null);
         txtDjo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDjoActionPerformed(evt);
@@ -470,7 +475,6 @@ public final class FrmBuscaEndereco extends javax.swing.JFrame {
         txtBacen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtBacen.setForeground(new java.awt.Color(255, 255, 255));
         txtBacen.setText("  0");
-        txtBacen.setBorder(null);
         txtBacen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBacenActionPerformed(evt);
@@ -595,6 +599,7 @@ public final class FrmBuscaEndereco extends javax.swing.JFrame {
         jLabel15.setBounds(30, 450, 100, 22);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtCep.setBackground(new java.awt.Color(102, 102, 102));
@@ -602,24 +607,25 @@ public final class FrmBuscaEndereco extends javax.swing.JFrame {
         txtCep.setForeground(new java.awt.Color(255, 255, 255));
         txtCep.setText(" ");
         txtCep.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.add(txtCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 210, -1));
+        jPanel4.add(txtCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 9, 210, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Cep           : ");
         jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jButtonBuscaCEP.setText("Buscar");
-        jButtonBuscaCEP.setEnabled(false);
+        jButtonBuscaCEP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonBuscaCEP.setForeground(new java.awt.Color(0, 0, 204));
+        jButtonBuscaCEP.setText("Consultar Correios");
         jButtonBuscaCEP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBuscaCEPActionPerformed(evt);
             }
         });
-        jPanel4.add(jButtonBuscaCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        jPanel4.add(jButtonBuscaCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(20, 190, 500, 60);
+        jPanel4.setBounds(20, 190, 540, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/fundo.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -999,7 +1005,38 @@ public final class FrmBuscaEndereco extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void jButtonBuscaCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscaCEPActionPerformed
-        // TODO add your handling code here:
+      
+        String cep = trim(Utils.tratarVariavel(txtCep.getText()));
+        
+        if("".equals(cep)){
+            JOptionPane.showMessageDialog(null, "Digite o cep");
+            return;
+            
+        }
+        
+        
+        
+        List<Bairro> listaBairro = new ArrayList<>();
+        BairroDAO bairroDAO = new BairroDAO();
+        
+        listaBairro = bairroDAO.buscar(cep);
+        
+        if(listaBairro == null){
+            JOptionPane.showMessageDialog(null, "Cep não encontrado na base dos correios, favor verificar");
+            return;
+        }
+        
+        String enderecoCorreios = null;
+        
+        for (Bairro bairro : listaBairro) {
+             enderecoCorreios  = "Bairro: "  + bairro.getBairro() +   "\n" +   " Logradouro: " + bairro.getLogradouro() +  "\n" +  " Cidade : " + bairro.getCidade() + "\n" + "Codigo IBGE: " + bairro.getEstado_info().getCodigo_ibge() 
+                     + "\n" + " Estado:" + bairro.getEstado_info().getNome()  + "\n"   +  "UF:" + bairro.getEstado();
+            
+          
+        }
+        JOptionPane.showMessageDialog(null, enderecoCorreios);
+        
+        
     }//GEN-LAST:event_jButtonBuscaCEPActionPerformed
     
     /**

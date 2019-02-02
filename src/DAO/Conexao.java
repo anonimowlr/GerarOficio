@@ -33,17 +33,19 @@ public class Conexao {
     this.conectado = false;
     this.driver = "com.mysql.jdbc.Driver"; //Classe do driver JDBC
     this.banco = "bdjudicial"; ///servidor
-        if ("localxxx".equals(usarBanco)) {//Para gravar local-deixar apenas "local" na condição
-            this.host = "localhost"; //ip do banco de dados
-            this.usuario = "root";
-            this.senha = "root";
+        if ("local".equals(usarBanco)) {//Para gravar local-deixar apenas "local" na condição
+            this.host = "192.168.1.103"; //ip do banco de dados
+            this.usuario = "jocimar";
+            this.senha = "jwalter1983";
+            this.url = "jdbc:mysql://" + host + ":4040/" + banco; //URL de conexão
         }else{
             this.host = "10.105.87.250";
             this.usuario = "basso";  
             this.senha = "2579368410";
+           this.url = "jdbc:mysql://" + host + ":3306/" + banco; //URL de conexão
         }
 
-   this.url = "jdbc:mysql://" + host + ":3306/" + banco; //URL de conexão
+ 
     
     }
 
