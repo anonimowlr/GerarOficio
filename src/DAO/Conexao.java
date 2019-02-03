@@ -37,7 +37,7 @@ public class Conexao {
             this.host = "localhost"; //ip do banco de dados
             this.usuario = "root";
             this.senha = "root";
-            this.url = "jdbc:mysql://" + host + ":3340/" + banco; //URL de conexão
+            this.url = "jdbc:mysql://" + host + ":3306/" + banco; //URL de conexão
         }else{
             this.host = "10.105.87.250";
             this.usuario = "basso";  

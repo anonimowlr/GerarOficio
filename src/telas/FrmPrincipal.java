@@ -624,9 +624,10 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/nome23.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/bb_logo1.png"))); // NOI18N
+        jLabel10.setText("Gerador de Ofícios");
         getContentPane().add(jLabel10);
         jLabel10.setBounds(0, -10, 720, 70);
 
