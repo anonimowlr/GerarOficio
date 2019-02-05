@@ -16,8 +16,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,16 +28,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javafx.application.Platform.exit;
-import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.text.DefaultFormatter;
 import javax.swing.text.MaskFormatter;
+import jdk.nashorn.internal.ir.BreakNode;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import pdf.GeraOficio;
@@ -51,6 +47,7 @@ import pdf.Oficio;
  */
 public final class FrmPrincipal extends javax.swing.JFrame {
 
+   static String proximoOficio = null;
     //Variável para escolha da tabela gerador_oficio ou gerador_oficio2
     // static  public  String tabelaGerador_oficio="gerador_oficios";
     static public String tabelaGerador_oficio = "gerador_oficios2";
@@ -66,6 +63,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
      */
     public FrmPrincipal() throws IOException, Exception {
         Integer mes;
+        
        
         //Verifica a versão do programa, não abre se for versão antiga.
         //e abre a pasta do programa, para o usuário copiar 
@@ -79,8 +77,8 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         local = local.substring(0, 1);
 
        
-        if ("G".equals(local)) {
-            JOptionPane.showMessageDialog(rootPane, "Favor copiar o programa para seu computador. ");
+        if ("G".equals(local) || "P".equals(local)) {
+            JOptionPane.showMessageDialog(rootPane, "Favor copiar o programa  para a  pasta Temp do seu computador. ");
             System.exit(0);
         }
 
@@ -116,6 +114,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         cmbEnderecoRetorno.addItem("Av. São João");
         //cmbEnderecoRetorno.addItem("Vila Mariana - Central");
         cmbEnderecoRetorno.addItem("Vila Mariana");
+        cmbEnderecoRetorno.addItem("Curitiba");
         
         //Modelos adicionados em 201600704 Denise 
         cmbRespostas.addItem("Selecione o modelo:");
@@ -499,7 +498,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                      
                 if(!e.exists()){
                      try {
-                        Runtime.getRuntime().exec("explorer G:\\Publica\\PROJETOS\\Gerador de Oficios\\PROGRAMA_GERADOR");
+                        Runtime.getRuntime().exec("explorer P:\\CENOP1915\\CENOP SERVIÇOS\\ADMINISTRATIVO\\CAPTURA JAVA\\Gerador Oficio");
                     } catch (IOException ex) {
                         Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                         Runtime.getRuntime().exec("G:\\Publica\\PROJETOS\\Gerador de Oficios\\PROGRAMA_GERADOR");
@@ -1084,6 +1083,9 @@ public final class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnOficioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOficioActionPerformed
 
+        
+        
+        
         Oficio oficio = new Oficio();
         try {
             oficio.setLinhas(txtLinhas.getText());
@@ -1413,7 +1415,9 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         String email = txtEmail.getText();
                         String CMBENDERECORET = cmbEnderecoRetorno.getSelectedItem().toString();
                         String CMBGERENTE = cmbGerente.getSelectedItem().toString();
-                            
+                       
+                        
+                        
                         if (aof.equalsIgnoreCase("    /         ")){
                             aof="";
                         }
@@ -1436,7 +1440,8 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(txtAOF, "Favor digitar o número da AOF");
                         }else{
                                 if ("".equals(txtOficio.getText())) {
-                                    JOptionPane.showMessageDialog(txtOficio, "Favor digitar o número do OFICIO CENOP");
+                                    JOptionPane.showMessageDialog(txtOficio, "Favor clique em salvar para gerar o número do OFICIO CENOP");
+                                   
 
                                 } else {
 
@@ -1445,7 +1450,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                                     } else {
 
                                         try {
-                                            InsereOficio(oficioCenop, aof, processo, inquerito, Oficio, autor, reu, envolvido, abc, resposta, tratamento, endereco, CMBAUTOR, CMBREU, CMBENVOLVIDO, CMBCONTEUDO, LINHAS, chave, sigiloso, correio, email, CMBGERENTE, CMBENDERECORET);
+                                            InsereOficio(oficioCenop, aof, processo, inquerito, Oficio, autor, reu, envolvido, abc, resposta, tratamento, endereco, CMBAUTOR, CMBREU, CMBENVOLVIDO, CMBCONTEUDO, LINHAS, chave, sigiloso, correio, email, CMBGERENTE, CMBENDERECORET,proximoOficio);
 
                                             JOptionPane.showMessageDialog(this, "Gravado com sucesso.");
                                         } catch (SQLException ex) {
@@ -1564,6 +1569,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             cmbEnderecoRetorno.addItem("Av. São João");
             //cmbEnderecoRetorno.addItem("Vila Mariana - Central");
             cmbEnderecoRetorno.addItem("Vila Mariana");
+             cmbEnderecoRetorno.addItem("Curitiba");
             //checkbox de anexo email 
             jCheckBoxComAnexo.setSelected(false);
         } else {
@@ -1602,6 +1608,10 @@ public final class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+        // Confirma o proximo numero de oficio
+        gerarNovoOficio();
+        
         
         //CARREGA AS VARIÁVEIS
         String oficioCenop = txtOficio.getText();
@@ -1663,7 +1673,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             } else {
 
                 try {
-                    InsereOficio(oficioCenop, aof, processo, inquerito, oficio, autor, reu, envolvido, abc, resposta, tratamento, endereco, CMBAUTOR, CMBREU, CMBENVOLVIDO, CMBCONTEUDO, LINHAS, chave, sigiloso, correio, email, CMBGERENTE, CMBENDERECORET);
+                    InsereOficio(oficioCenop, aof, processo, inquerito, oficio, autor, reu, envolvido, abc, resposta, tratamento, endereco, CMBAUTOR, CMBREU, CMBENVOLVIDO, CMBCONTEUDO, LINHAS, chave, sigiloso, correio, email, CMBGERENTE, CMBENDERECORET,proximoOficio);
                     JOptionPane.showMessageDialog(this, "Gravado com sucesso.");
                 } catch (SQLException ex) {
                     Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -5410,7 +5420,10 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         if ("".equals(txtOficio.getText())) {
-            JOptionPane.showMessageDialog(txtOficio, "Favor digitar o número do Oficio Cenop");
+            
+            gerarNovoOficio();
+            
+            //JOptionPane.showMessageDialog(txtOficio, "Favor digitar o número do Oficio Cenop");
         } else {
 
             String OficioCenop = txtOficio.getText();
@@ -5523,6 +5536,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         cmbEnderecoRetorno.addItem("Av. São João");
                         //cmbEnderecoRetorno.addItem("Vila Mariana - Central");
                         cmbEnderecoRetorno.addItem("Vila Mariana");
+                        cmbEnderecoRetorno.addItem("Curitiba");
                         
                         jCheckBoxComAnexo.setSelected(false);
 
@@ -5607,7 +5621,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         cmbEnderecoRetorno.addItem("Av. São João");
                         //cmbEnderecoRetorno.addItem("Vila Mariana - Central");
                         cmbEnderecoRetorno.addItem("Vila Mariana");
-                        
+                        cmbEnderecoRetorno.addItem("Curitiba");
                         jCheckBoxComAnexo.setSelected(false);
                     }
 
@@ -6112,7 +6126,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxComAnexoActionPerformed
 
     private void InsereOficio(String oficioCenop, String aof, String processo, String inquerito, String oficio, String autor,
-            String reu, String envolvido, String abc, String resposta, String tratamento, String endereco, String CMBAUTOR, String CMBREU, String CMBENVOLVIDO, String CMBCONTEUDO, String Linhas, String Chave, String sigiloso, String correio, String email, String CMBGERENTE, String CMBENDERECORET) throws SQLException {
+            String reu, String envolvido, String abc, String resposta, String tratamento, String endereco, String CMBAUTOR, String CMBREU, String CMBENVOLVIDO, String CMBCONTEUDO, String Linhas, String Chave, String sigiloso, String correio, String email, String CMBGERENTE, String CMBENDERECORET, String proximoOficio) throws SQLException {
 
         if ((!"".equals(aof))) {
             String aofBd = ("'" + aof + "'");
@@ -6134,7 +6148,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         String sqlUp = "UPDATE " + tabelaGerador_oficio + " "
                                 + "SET OFICIO_CENOP=?,PROCESSO=?,INQUERITO=?,OFICIO=?,AUTOR=?,"
                                 + "REU=?,ENVOLVIDO=?,ABC=?,RESPOSTA=?,TRATAMENTO=?,ENDERECO=?,CMBAUTOR=?,CMBREU=?,"
-                                + "CMBENVOLVIDO=?,CMBCONTEUDO=?,LINHAS=?,SIGILOSO=?,CORREIO=?,DATA=now(),EMAIL=?,GERENTE=?,ENDERECO_RET=? "
+                                + "CMBENVOLVIDO=?,CMBCONTEUDO=?,LINHAS=?,SIGILOSO=?,CORREIO=?,DATA=now(),EMAIL=?,GERENTE=?,ENDERECO_RET=?,SEQ_OFICIO "
                                 + "WHERE AOF=?";
                         
                         PreparedStatement comando = cn.prepareStatement(sqlUp);
@@ -6160,6 +6174,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         comando.setString(20, CMBGERENTE);
                         comando.setString(21, CMBENDERECORET);
                         comando.setString(22, aof);
+                        comando.setString(23, proximoOficio);
                         System.out.println("Executando comando...");
                         comando.execute();
                         //  JOptionPane.showMessageDialog(this, "Gravado com sucesso.");
@@ -6168,7 +6183,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
 
                     } else {
                          String sql = "INSERT INTO " + tabelaGerador_oficio + " (OFICIO_CENOP,AOF,PROCESSO,INQUERITO,OFICIO,AUTOR,"
-                                + "REU,ENVOLVIDO,ABC,RESPOSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?)";
+                                + "REU,ENVOLVIDO,ABC,RESPOSTA,TRATAMENTO,ENDERECO,CHAVE,CMBAUTOR,CMBREU,CMBENVOLVIDO,CMBCONTEUDO,LINHAS,SIGILOSO,CORREIO,DATA,EMAIL,GERENTE,ENDERECO_RET,SEQ_OFICIO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now(),?,?,?,?)";
 
                         PreparedStatement comando = cn.prepareStatement(sql);
                         comando.setString(1, oficioCenop);
@@ -6194,6 +6209,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                         comando.setString(21, email);
                         comando.setString(22, CMBGERENTE);
                         comando.setString(23, CMBENDERECORET);
+                        comando.setString(24, proximoOficio);
                         //   System.out.println("Executando comando...");
                         comando.execute();
                         
@@ -6502,5 +6518,48 @@ public final class FrmPrincipal extends javax.swing.JFrame {
             }         
          return o;
 }
+
+    private void gerarNovoOficio() {
+
+   
+  
+   try (com.mysql.jdbc.Connection cn = (com.mysql.jdbc.Connection) new Conexao().conectar()) {
+                // String sqlBuscaEvtc = "Select hc_honor.ID_H  from hc_honor where hc_honor.DATA_EVT= " + dataHonorariosBd + " and  hc_honor.NPJ = " + npjHonorariosBD + "";
+                String sqlBuscaDados = "SELECT max(SEQ_OFICIO) as SEQ_OFICIO FROM " + tabelaGerador_oficio;
+
+                System.out.println(sqlBuscaDados);
+                java.sql.Statement stm = cn.createStatement();
+
+                try {
+                     int ultimoOficio = 0;
+                    ResultSet rs = stm.executeQuery(sqlBuscaDados);
+                   
+                    if(rs.next()){
+                    ultimoOficio = rs.getInt("SEQ_OFICIO");
+                   
+                    }
+                    
+                    
+                    
+                    
+                    if(Integer.toString(ultimoOficio + 1 ).length()<3){
+                        proximoOficio = "0" + Integer.toString(ultimoOficio + 1);
+                    }
+                    if(txtOficio.getText().equals("")){
+                    txtOficio.setText(Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + "/" + proximoOficio); 
+                    }
+                    
+                } catch (SQLException e) {
+                  JOptionPane.showMessageDialog(null, e);   
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, ex);
+
+            }         
+       
+
+    }
  
 }

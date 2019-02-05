@@ -92,6 +92,7 @@ public class HttpClientApiCorreio {
         try {
             
             HttpGet httpGet =  new  HttpGet(HttpClientApiCorreio.URLBase+path);
+            
              ResponseHandler<String>  responseHandler =  new ResponseHandler<String>() {
                  @Override
                  public String handleResponse(final HttpResponse response) throws  ClientProtocolException,IOException{
@@ -102,7 +103,7 @@ public class HttpClientApiCorreio {
                                 return entity !=null ? EntityUtils.toString(entity) : null;
                                 
                             } else{
-                                throw  new  ClientProtocolException("Inesperado status de responsta:" + status);
+                                throw  new  ClientProtocolException("Inesperado status de resposta:" + status);
                             }
                      
                 
