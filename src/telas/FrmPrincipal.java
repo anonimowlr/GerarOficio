@@ -489,7 +489,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         
       
   //if ("19.6".equals(versao)||("19.8".equals(versao))) {
-        if ("19.9".equals(versao)) {
+        if ("20".equals(versao)) {
         } else {
             JOptionPane.showMessageDialog(this, "Versão desatualizada. "
                     + "Favor copiar a nova versão do Gerador de Oficios para sua área de trabalho!!! TKS");
@@ -6544,7 +6544,12 @@ public final class FrmPrincipal extends javax.swing.JFrame {
                     
                     if(Integer.toString(ultimoOficio + 1 ).length()<3){
                         proximoOficio = "0" + Integer.toString(ultimoOficio + 1);
+                    }else{
+                         proximoOficio =  Integer.toString(ultimoOficio + 1);
                     }
+                    
+                    
+                    
                     if(txtOficio.getText().equals("")){
                     txtOficio.setText(Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + "/" + proximoOficio); 
                     }
